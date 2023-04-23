@@ -17,23 +17,6 @@ result = {
 }
 
 
-users = [{
-    'Bill': datetime(1983, 4, 29).date(),
-    'Will': datetime(1983, 4, 24).date(),
-    'Bob': datetime(1983, 4, 25).date(),
-    'Dug': datetime(1983, 4, 22).date(),
-    'Dwane': datetime(1983, 5, 1).date()
-},
-    {
-        'Rob': datetime(1983, 4, 26).date(),
-        'Krab': datetime(1983, 4, 27).date(),
-        'Jane': datetime(1983, 4, 28).date(),
-        'Lane': datetime(1983, 4, 21).date(),
-        'Tane': datetime(1983, 4, 23).date(),
-        'Kane': datetime(1983, 4, 22).date()
-    }]
-
-
 def period_of_check():
     date_now = datetime.now().date()
     start = date_now - timedelta(date_now.weekday()) + timedelta(days=5)
@@ -53,5 +36,3 @@ def get_birthdays_per_week(users: list) -> None:
                 result[weekdays[0]].append(key)
     for key, value in result.items():
         print(key, ', '.join(value), sep=': ')
-
-get_birthdays_per_week(users)
